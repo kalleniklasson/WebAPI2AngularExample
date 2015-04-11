@@ -1,0 +1,9 @@
+﻿<div class="row" >
+    <h4>This is an abstract state called user</h4>
+    An abstract state cant be targeted alone. You have to target its childstates. When switching between childstates the parentstate is never reloaded.
+    <div data-ui-sref="user.info({id: vm.user.id})" class="btn btn-info">User info</div>
+    <div data-ui-sref="user.edit({id: vm.user.id})" class="btn btn-info">Edit user</div>
+</div>
+<div class="row">
+    <div data-ui-view> </div>
+</div>
