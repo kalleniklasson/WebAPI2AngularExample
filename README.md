@@ -1,6 +1,6 @@
 # WebAPI2AngularExample
 
-In the Web API I use Entity Framework and migrations, Untiy for Dependency injection. 
+In the Web API I use Entity Framework and migrations, Unity for Dependency injection. 
 
 To get the example to run you might need to write Update-database in package manager console.
 
