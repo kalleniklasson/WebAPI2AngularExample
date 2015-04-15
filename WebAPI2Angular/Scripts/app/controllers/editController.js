@@ -1,16 +1,20 @@
-﻿angular.module('app')
-    .controller('editController', editController);
+﻿(function () {
+    'use strict';
 
-editController.$inject = ['user'];
+    angular.module('app')
+        .controller('editController', editController);
 
-function editController(user) {
-    var vm = this;
+    editController.$inject = ['user'];
 
-    vm.user = user;
+    function editController(user) {
+        var vm = this;
 
-    activate();
+        vm.user = user;
 
-    function activate() {
+        activate();
 
-    }
-};
+        function activate() {
+
+        }
+    };
+})();

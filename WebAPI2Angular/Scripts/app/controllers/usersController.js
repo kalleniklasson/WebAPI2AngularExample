@@ -1,16 +1,20 @@
-﻿angular.module('app')
-    .controller('usersController', usersController);
+﻿(function () {
+    'use strict';
 
-usersController.$inject = ['users'];
+    angular.module('app')
+        .controller('usersController', usersController);
 
-function usersController(users) {
-    var vm = this;
+    usersController.$inject = ['users'];
 
-    vm.users = users.data;
+    function usersController(users) {
+        var vm = this;
 
-    activate();
+        vm.users = users.data;
 
-    function activate() {
-       
-    }
-};
+        activate();
+
+        function activate() {
+
+        }
+    };
+})();

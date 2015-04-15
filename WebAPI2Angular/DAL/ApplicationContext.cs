@@ -2,13 +2,17 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using WebAPI2Angular.Migrations;
 using WebAPI2Angular.Models;
 
 namespace WebAPI2Angular.DAL
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext() : base("name=ApplicationContext") { }
+        public ApplicationContext() : base("name=ApplicationContext")
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationContext, Configuration>());
+        }
         public DbSet<Person> Persons { get; set; }
         public override int SaveChanges()
         {

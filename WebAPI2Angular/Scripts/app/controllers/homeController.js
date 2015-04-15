@@ -1,15 +1,19 @@
-﻿angular.module('app')
-    .controller('homeController', homeController);
+﻿(function () {
+    'use strict';
 
-homeController.$inject = [];
+    angular.module('app')
+        .controller('homeController', homeController);
 
-function homeController() {
-    var vm = this;
+    homeController.$inject = [];
 
-    vm.welcomeMessage = "Welcome to your new SPA";
+    function homeController() {
+        var vm = this;
 
-    activate();
+        vm.welcomeMessage = "Welcome to your new SPA";
 
-    function activate() {
-    }
-};
+        activate();
+
+        function activate() {
+        }
+    };
+})();
