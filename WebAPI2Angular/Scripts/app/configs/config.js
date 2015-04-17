@@ -2,12 +2,12 @@
     'use strict';
 
     angular.module('app')
-        .config(appConfig)
-        .run(appRun);
+        .config(config)
+        .run(run);
 
-    appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    function appConfig($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');
 
@@ -44,7 +44,7 @@
                 controllerAs: 'vm'
             })
             .state('user.edit', {
-                url: '',
+                url: '/edit',
                 templateUrl: '/Scripts/app/views/user.edit.html',
                 controller: 'editController',
                 controllerAs: 'vm'
@@ -74,9 +74,9 @@
         }
     }
 
-    appRun.$inject = ['$rootScope', '$state', '$stateParams'];
+    run.$inject = ['$rootScope', '$state', '$stateParams'];
 
-    function appRun($rootScope, $state, $stateParams) {
+    function run($rootScope, $state, $stateParams) {
         $rootScope.$on('$stateChangeStart', function(event, toState, toStateParams) {
             $rootScope.toState = toState;
             $rootScope.toStateParams = toStateParams;

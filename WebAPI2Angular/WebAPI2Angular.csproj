@@ -200,7 +200,7 @@
     <Content Include="Scripts\vendor\angular.js" />
     <Content Include="Scripts\vendor\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\configs\appConfig.js" />
+    <Content Include="Scripts\app\configs\config.js" />
     <Content Include="Scripts\app\controllers\homeController.js" />
     <Content Include="Scripts\app\views\home.html" />
     <Content Include="Scripts\vendor\bootstrap.js" />

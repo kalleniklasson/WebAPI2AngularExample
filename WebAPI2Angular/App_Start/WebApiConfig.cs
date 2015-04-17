@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Globalization;
+using System.Web.Http;
+using Newtonsoft.Json.Converters;
 using WebAPI2Angular.DAL;
 using WebAPI2Angular.IoC;
 using WebAPI2Angular.Models;
@@ -14,7 +16,9 @@ namespace WebAPI2Angular
         {
             // Web API configuration and services
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            config.Formatters.JsonFormatter.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AdjustToUniversal });
+            // DateTimeZoneHandling will be effective during deserialization
+            config.Formatters.JsonFormatter.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
 
             // Web API routes
             config.MapHttpAttributeRoutes();
